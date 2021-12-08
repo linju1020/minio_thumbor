@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  minio:
+    container_name: minio
+    image: minio/minio
+    ports:
+      - 7999:7999
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /root/minio/data:/data
+      - /root/minio/config:/root/.minio
+    environment:
+      - MINIO_ACCESS_KEY=minio
+      - MINIO_SECRET_KEY=apple102030+++
+    restart: always
