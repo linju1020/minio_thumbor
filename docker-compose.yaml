@@ -5,7 +5,8 @@ services:
     container_name: minio
     image: minio/minio
     ports:
-      - 7999:7999
+      - 9000:9000
+      - 9001:9001
     volumes:
       - /etc/localtime:/etc/localtime
       - /root/minio/data:/data
@@ -13,4 +14,11 @@ services:
     environment:
       - MINIO_ACCESS_KEY=minio
       - MINIO_SECRET_KEY=apple102030+++
+    command: server --console-address ':9001' /data
+    restart: always
+  thumbor:
+    container_name: thumbor
+    image: minimalcompact/thumbor
+    ports:
+      - 8999:80
     restart: always
