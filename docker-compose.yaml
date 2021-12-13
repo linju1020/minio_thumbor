@@ -13,7 +13,7 @@ services:
       - /root/minio/config:/root/.minio
     environment:
       - MINIO_ACCESS_KEY=minio
-      - MINIO_SECRET_KEY=apple102030+++
+      - MINIO_SECRET_KEY=minio
     command: server --console-address ':9001' /data
     restart: always
   thumbor:
