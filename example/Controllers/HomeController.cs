@@ -15,9 +15,9 @@ namespace example.Controllers
     [Route("[controller]/[action]")]
     public class HomeController : ControllerBase
     {
-        private readonly string endpoint = "18.141.10.239:9000";
+        private readonly string endpoint = "*.*.*.*:9000";
         private readonly string accessKey = "minio";
-        private readonly string secretKey = "apple102030+++";
+        private readonly string secretKey = "minio";
 
         private readonly ILogger<HomeController> _logger;
         public HomeController(ILogger<HomeController> logger)
